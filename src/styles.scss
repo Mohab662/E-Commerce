@@ -1,0 +1,127 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+$main-color:#0aad0a;
+$light-color:#f0f3f2;
+$shadow: rgba(145,158,171,0.2) 0px 2px 4px -1px,
+rgba(145,158,171,0.14) 0px 4px 5px 0px,
+rgba(145,158,171,0.12) 0px 1px 10px 0px;
+$main-family:"Encode sans Expanded","sans-serif";
+$rating-color:#ffc908;
+$main-transition:0.8s;
+$main-size:16px;
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: $main-color;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+li,i,img{
+    cursor:pointer !important;
+}
+li{
+    list-style: none !important;
+}
+body{
+    font-family: $main-family;
+    font-size: $main-size;
+}
+.text-main{
+    color: $main-color;
+}
+.text-light{
+    color: $light-color;
+}
+.bg-main-light{
+    background-color: $light-color;
+}
+.bg-main-green{
+    background-color: $main-color;
+}
+.rating-color{
+    color: $rating-color;
+}
+.font-sm{
+    font-size: 11px;
+}
+.main-btn{
+    background-color: $main-color;
+    color: #fff;
+    border-radius: 5px;
+    border: unset;
+    cursor: pointer;
+    padding: 4px 12px;
+
+    &:disabled{
+        background-color: #078e076c;
+        color: #ffffff9c;
+        cursor: not-allowed;
+    }
+
+}
+.product{
+    border: 1px solid $main-color;
+    border-radius: 5px;
+    padding: 4px;
+    box-shadow: $shadow;
+    position: relative;
+    &:hover {
+        .heart{
+            right: 5px; 
+        }
+        .heart-left{
+            left: 5px;
+        }
+    }
+    .heart{
+        font-size:40px;
+        position: absolute;
+        top: 5px;
+        right: -40px;
+        z-index: 999;
+        cursor: pointer;
+        transition: 0.6s;
+    }
+
+    .heart-left{
+        font-size:40px;
+        position: absolute;
+        top: 5px;
+        left: -40px;
+        z-index: 999;
+        cursor: pointer;
+        transition: 0.6s;
+    }
+    
+}
+
+.active-link{
+    color: $light-color !important;
+    background-color: $main-color !important;
+    border-radius: 5px !important;
+
+}
+.product{
+    &:hover{
+        .main-btn{
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .main-btn{
+        transform: translateY(150%);
+        transition: 0.8s;
+        opacity: 0;
+    }
+}
+

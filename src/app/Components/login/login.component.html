@@ -1,0 +1,32 @@
+<section class="register w-75 mx-auto shadow rounded p-4 my-3 bg-maim-light">
+    
+    <form class="py-3" [formGroup]="loginForm" (ngSubmit)="handleForm()">
+     <h2 class="mb-4" >Login Now</h2>
+     <div class="formIteam mb-3">
+         <label for="email">Email</label>
+     <input formControlName="email" type="email" id="email" class="form-control">
+     <div class="alert alert-danger" *ngIf="(loginForm.get('email')?.touched || loginForm.get('email')?.value.length>0)  && loginForm.get('email')?.errors">
+         <p *ngIf="loginForm.get('email')?.getError('required')">Email Is Required</p>
+         <p *ngIf="loginForm.get('email')?.getError('pattern')">Enter Valid Email</p>
+        </div>
+     </div>
+     <div class="formIteam mb-3">
+         <label for="password">Password</label>
+     <input formControlName="password" type="password" id="password" class="form-control">
+     <div class="alert alert-danger" *ngIf="(loginForm.get('password')?.touched || loginForm.get('password')?.value.length>0) && loginForm.get('password')?.errors">
+         <p *ngIf="loginForm.get('password')?.getError('required')">Password Is Required</p>
+         <p *ngIf="loginForm.get('password')?.getError('pattern')">Password Must Be At Least 6 Chars"</p>
+        </div>
+     </div>
+     <div class="d-flex justify-content-between align-items-center">
+        <a class="forgetA text-main" [routerLink]="['/forgetpass']">Forget Password ?</a>
+        <button [disabled]="loginForm.invalid" class="main-btn ms-auto d-block" type="submit">Send
+            <span *ngIf="isLoading"> <i class="fas fa-spin fa-spinner"></i> </span>
+        </button>
+     </div>
+        
+    </form>
+
+    <p *ngIf="errMsg" class="alert alert-dark text-center p-1 w-50 mx-auto mb-0">{{errMsg}}</p>
+ 
+ </section>

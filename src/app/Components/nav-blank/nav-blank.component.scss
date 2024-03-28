@@ -1,0 +1,24 @@
+$light-color:#f5f7f6;
+.custom-Nav-Scroll-pad{
+    background-color: $light-color !important;
+}
+.droo{
+    transform: translateY(15%);
+    i{
+        color: cadetblue;
+    }
+    .dropdown-menu{
+        background-color: rgb(74, 140, 142) !important;
+        li{
+            &:hover{
+                background-color: rgb(74, 140, 142) !important;
+            }
+            a{
+                color: #f5f7f6;
+                 &:hover{
+                background-color: rgb(74, 140, 142) !important;
+            }
+            }
+        }
+    }
+}

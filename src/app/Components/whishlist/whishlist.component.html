@@ -1,0 +1,29 @@
+<section class=" py-4 shadow bg-main-light p-3 mb-3 rounded mx-auto" *ngIf="products.length>0;else msg">
+    <div class="row g-4 justify-content-center">
+        <div *ngFor="let product of products " class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="product h-100 overflow-hidden">
+                <i *ngIf="whishListData.includes($any(product._id))" (click)="removeFav(product._id)" class="fa-solid fa-heart heart me-auto text-danger"></i>
+                <i *ngIf="!whishListData.includes($any(product._id))" (click)="addToWhishList(product._id)"  class="fa-regular fa-heart heart ms-auto text-danger"></i>
+
+                <header role="button" [routerLink]="['/productDetails',product._id]">
+                    <img class="w-100" [src]="product.imageCover" [title]="product.title" [alt]="product.title">
+                    <h3 class="h6">{{product.title | cutText:2}}</h3>
+                    <h3 class="h6 text-main">{{product.category.name}}</h3>
+                    <div class="small d-flex align-items-center justify-content-between">
+                        <span >{{product.price | currency:'e£'}}</span>
+                        <p class="mb-0 font-sm"><i [class.rating-color]=" ConvertStringToNumber(product.ratingsAverage)>= star" *ngFor="let star of [1,2,3,4,5]" class="fas fa-star"></i>
+                            <span class="text-muted">{{product.ratingsAverage}}</span>
+                        </p>
+                    </div>
+                </header>
+                <footer>
+                    <button (click)="addProduct(product._id,btnAdd)" #btnAdd class="main-btn w-100 py-2">+ Add To Cart</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #msg>
+    <h2 class="text-center my-5">No Products Are Added Yet !</h2>
+</ng-template>

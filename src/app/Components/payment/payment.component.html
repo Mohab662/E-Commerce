@@ -1,0 +1,19 @@
+<section class="container shadow bg-main-light p-3 mb-3 rounded mx-auto">
+    <h2 class="text-center text-main">Making Order</h2>
+    <form [formGroup]="orderForm" (ngSubmit)="handleForm()">
+    <div class="form-items my-4">
+        <label for="details">Details</label>
+        <input class="form-control" type="text"  formControlName="details">
+    </div>
+        <div class="form-items my-4">
+        <label for="phone">Phone</label>
+        <input class="form-control" type="tel" formControlName="phone">
+    </div>
+        <div class="form-items my-4">
+         <label for="city">City</label>
+        <input class="form-control" type="text" formControlName="city">
+        </div>
+        <button class="btn d-block btn-success mx-auto">CheckOut <span *ngIf="isLoading"> <i class="fas fa-spin fa-spinner"></i> </span></button>
+    </form>
+
+</section>

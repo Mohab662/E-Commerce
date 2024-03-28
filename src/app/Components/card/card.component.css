@@ -1,0 +1,36 @@
+.btn-reomve {
+  color: rgb(209, 6, 6);
+}
+.btn-reomve:disabled {
+  color: rgb(233, 102, 102);
+  cursor: not-allowed;
+}
+
+.countBtn button {
+  border-color: #0aad0a !important;
+  color: black !important;
+}
+.countBtn:disabled {
+  border-color: #8fdb8f !important;
+  color: rgb(119, 114, 114) !important;
+  cursor: not-allowed;
+}
+
+.clear-btn {
+  border-color: rgb(209, 6, 6) !important;
+  color: black !important;
+  transform: translateY(-100%);
+}
+.clear-btn:disabled {
+  border-color: rgb(233, 102, 102) !important;
+  color: rgb(119, 114, 114) !important;
+  cursor: not-allowed;
+}
+.clear-btn:hover {
+  background-color: rgb(209, 6, 6) !important;
+  color: whitesmoke !important;
+}
+
+.visa {
+  width: 50px;
+}/*# sourceMappingURL=card.component.css.map */
